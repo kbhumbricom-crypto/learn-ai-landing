@@ -446,7 +446,7 @@ export default function EarlyAccess() {
                         <div style={{ marginTop: '1.25rem', textAlign: 'center' }}>
                           <button 
                             type="button" 
-                            onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
+                            onClick={() => document.getElementById('how-it-works')?.scrollIntoView({ behavior: 'smooth' })}
                             style={{ background: 'none', border: 'none', color: 'rgba(255, 255, 255, 0.4)', fontSize: '0.85rem', fontWeight: 500, cursor: 'pointer', transition: 'color 0.2s', display: 'inline-flex', alignItems: 'center', gap: '0.4rem', padding: '0.5rem', textDecoration: 'underline dotted', textUnderlineOffset: '4px' }}
                             onMouseOver={(e) => e.currentTarget.style.color = 'var(--color-text)'}
                             onMouseOut={(e) => e.currentTarget.style.color = 'rgba(255, 255, 255, 0.4)'}

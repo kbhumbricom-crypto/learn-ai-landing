@@ -153,7 +153,7 @@ export default function MarketingSections({ onCtaClick }: { onCtaClick?: () => v
       `}</style>
 
       {/* SECTION 1: HOW IT WORKS (Dark) */}
-      <section className="marketing-section">
+      <section id="how-it-works" className="marketing-section">
         <motion.div 
           className="marketing-content" 
           style={{ textAlign: 'center' }}
