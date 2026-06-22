@@ -15,6 +15,7 @@ export default function EarlyAccess() {
   const [error, setError] = useState<string | null>(null);
   const [waitlistCount, setWaitlistCount] = useState(30);
   const [scrollY, setScrollY] = useState(0);
+  const [showFloatingCta, setShowFloatingCta] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
   const rafRef = useRef<number | null>(null);
 
@@ -49,8 +50,15 @@ export default function EarlyAccess() {
   useEffect(() => {
     const handleScroll = () => {
       setScrollY(window.scrollY);
+      if (cardRef.current) {
+        // Show floating CTA if the user has scrolled past the main form card
+        const cardBottom = cardRef.current.getBoundingClientRect().bottom;
+        setShowFloatingCta(cardBottom < 0);
+      }
     };
     window.addEventListener('scroll', handleScroll, { passive: true });
+    // Run once on mount to check initial state
+    handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -468,6 +476,41 @@ export default function EarlyAccess() {
         </div>
 
         <MarketingSections onCtaClick={handleCtaClick} />
+
+      {/* Floating Mobile CTA */}
+      <AnimatePresence>
+        {showFloatingCta && (
+          <motion.div
+            initial={{ y: 100, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: 100, opacity: 0 }}
+            style={{
+              position: 'fixed',
+              bottom: '2rem',
+              left: 0,
+              right: 0,
+              display: 'flex',
+              justifyContent: 'center',
+              zIndex: 100,
+              padding: '0 1.5rem',
+              pointerEvents: 'none', // Allow clicking through the container
+            }}
+          >
+            <button
+              onClick={handleCtaClick}
+              className="btn btn-primary"
+              style={{
+                width: '100%',
+                maxWidth: '400px',
+                boxShadow: '0 10px 30px rgba(0,0,0,0.5), 0 0 20px rgba(255,138,61,0.4)',
+                pointerEvents: 'auto', // Re-enable clicking on the button itself
+              }}
+            >
+              Get Early Access
+            </button>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
         <style>{`
           /* Blobs */
