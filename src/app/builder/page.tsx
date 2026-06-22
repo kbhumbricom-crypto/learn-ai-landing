@@ -193,9 +193,9 @@ export default function Home() {
             My Courses
           </a>
 
-          <div style={{ width: '1px', height: '24px', backgroundColor: 'rgba(255,255,255,0.1)' }} />
+          <div className="hidden md:block" style={{ width: '1px', height: '24px', backgroundColor: 'rgba(255,255,255,0.1)' }} />
 
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+          <div className="hidden md:flex" style={{ alignItems: 'center', gap: '0.75rem' }}>
             <div style={{ display: 'flex', alignItems: 'center' }}>
               <Image src="https://i.pravatar.cc/100?img=1" alt="User" width={32} height={32} unoptimized style={{ width: '2rem', height: '2rem', borderRadius: '50%', border: '2px solid var(--color-bg)', zIndex: 4, position: 'relative' }} />
               <Image src="https://i.pravatar.cc/100?img=5" alt="User" width={32} height={32} unoptimized style={{ width: '2rem', height: '2rem', borderRadius: '50%', border: '2px solid var(--color-bg)', marginLeft: '-0.75rem', zIndex: 3, position: 'relative' }} />
