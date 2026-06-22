@@ -74,7 +74,7 @@ export default function MarketingSections({ onCtaClick }: { onCtaClick?: () => v
 
       <style>{`
         .marketing-section {
-          padding: 6rem 2rem;
+          padding: 6rem clamp(1.5rem, 5vw, 2rem);
           display: flex;
           flex-direction: column;
           align-items: center;

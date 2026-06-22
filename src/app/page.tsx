@@ -259,7 +259,7 @@ export default function EarlyAccess() {
           </nav>
 
           {/* Main Content Container */}
-          <main style={{ maxWidth: '75rem', margin: 'auto', padding: '2rem', display: 'grid', gridTemplateColumns: '1.2fr 25rem', gap: '3rem', alignItems: 'center', width: '100%', flexGrow: 1 }}>
+          <main style={{ maxWidth: '75rem', margin: 'auto', padding: 'clamp(1.5rem, 5vw, 2rem)', display: 'grid', gridTemplateColumns: '1.2fr 25rem', gap: '3rem', alignItems: 'center', width: '100%', flexGrow: 1 }}>
             
             {/* Left Column */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '3rem', position: 'relative' }}>
