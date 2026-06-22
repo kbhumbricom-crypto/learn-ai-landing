@@ -500,8 +500,13 @@ export default function EarlyAccess() {
               onClick={handleCtaClick}
               className="btn btn-primary"
               style={{
-                width: '100%',
-                maxWidth: '400px',
+                padding: '1.2rem 3.5rem', 
+                fontSize: '1.05rem', 
+                fontWeight: 700, 
+                borderRadius: '1.25rem', 
+                border: '1px solid rgba(255,255,255,0.1)', 
+                borderTop: '1px solid rgba(255,255,255,0.3)', 
+                textShadow: '0 1px 2px rgba(0,0,0,0.2)',
                 boxShadow: '0 10px 30px rgba(0,0,0,0.5), 0 0 20px rgba(255,138,61,0.4)',
                 pointerEvents: 'auto', // Re-enable clicking on the button itself
               }}
