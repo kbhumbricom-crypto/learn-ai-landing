@@ -99,7 +99,7 @@ export default function SplashScreen({ onComplete }: { onComplete: () => void })
         <motion.div
           style={{
             position: 'absolute',
-            top: '50%', left: 0, x: xPos,
+            top: '50%', left: widthStr,
             width: '120px', height: '120px',
             marginTop: '-60px', marginLeft: '-60px',
             background: 'radial-gradient(circle at center, rgba(255, 138, 61, 0.3) 0%, transparent 60%)',
@@ -113,7 +113,7 @@ export default function SplashScreen({ onComplete }: { onComplete: () => void })
           transition={{ duration: 0.25, ease: "easeOut" }}
           style={{
             position: 'absolute',
-            top: '50%', left: 0, x: xPos,
+            top: '50%', left: widthStr,
             width: '6px', height: '6px',
             marginTop: '-3px', marginLeft: '-3px',
             backgroundColor: '#ffffff',
