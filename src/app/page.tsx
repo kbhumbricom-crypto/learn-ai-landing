@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Logo } from '@/components/Logo';
 import MarketingSections from './MarketingSections';
+import SplashScreen from '@/components/SplashScreen';
 
 export default function EarlyAccess() {
   const [name, setName] = useState('');
@@ -35,14 +36,7 @@ export default function EarlyAccess() {
     });
   };
 
-  // Removed height-based scaling logic that was causing layout issues on mobile
-
   useEffect(() => {
-    // Artificial small delay for the loader so it feels premium
-    const timer = setTimeout(() => {
-      setIsPageLoading(false);
-    }, 800);
-
     fetch('/api/lead')
       .then(res => res.json())
       .then(data => {
@@ -51,8 +45,6 @@ export default function EarlyAccess() {
         }
       })
       .catch(console.error);
-
-    return () => clearTimeout(timer);
   }, []);
 
   useEffect(() => {
@@ -107,8 +99,8 @@ export default function EarlyAccess() {
 
   const handleSubmit = async (e?: React.FormEvent) => {
     if (e) e.preventDefault();
-    setError(null);
     
+    setError(null);
     if (!name || !email) {
       setError('Please provide both your name and email address.');
       return;
@@ -120,41 +112,36 @@ export default function EarlyAccess() {
     }
 
     setIsLoading(true);
-    
+
     try {
-      const response = await fetch('/api/lead', {
+      const res = await fetch('/api/lead', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name, email }),
       });
 
-      const data = await response.json();
+      const data = await res.json();
 
-      if (!response.ok) {
-        throw new Error(data.error || 'Something went wrong');
-      }
-
-      if (typeof data.count === 'number') {
-        setWaitlistCount(30 + data.count);
+      if (!res.ok) {
+        throw new Error(data.error || 'Failed to join waitlist');
       }
 
       setIsSuccess(true);
+      setWaitlistCount(prev => prev + 1);
       setName('');
       setEmail('');
       
-      // Fire confetti burst using dynamic import to avoid SSR issues
+      // Trigger confetti
       const confetti = (await import('canvas-confetti')).default;
       confetti({
-        particleCount: 150,
+        particleCount: 100,
         spread: 70,
         origin: { y: 0.6 },
-        colors: ['#FF8A3D', '#FFB380', '#FFFFFF']
+        colors: ['#ff8a3d', '#ffffff']
       });
 
-    } catch (err: any) {
-      setError(err.message || 'Failed to join early access. Please try again.');
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Something went wrong');
     } finally {
       setIsLoading(false);
     }
@@ -162,6 +149,10 @@ export default function EarlyAccess() {
 
   return (
     <>
+      <AnimatePresence>
+        {isPageLoading && <SplashScreen onComplete={() => setIsPageLoading(false)} />}
+      </AnimatePresence>
+
       <motion.div 
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -331,7 +322,7 @@ export default function EarlyAccess() {
             </div>
 
             {/* Right Column (Form Card) */}
-            <div style={{ position: 'relative' }}>
+            <div className="mt-12 md:mt-0" style={{ position: 'relative' }}>
               
               {/* Ambient Glow - Right Side */}
               <div style={{
