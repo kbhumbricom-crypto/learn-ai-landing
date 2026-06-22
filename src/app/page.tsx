@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Logo } from '@/components/Logo';
 import MarketingSections from './MarketingSections';
+import confetti from 'canvas-confetti';
 
 export default function EarlyAccess() {
   const [name, setName] = useState('');
@@ -129,6 +130,15 @@ export default function EarlyAccess() {
       setIsSuccess(true);
       setName('');
       setEmail('');
+      
+      // Fire confetti burst!
+      confetti({
+        particleCount: 150,
+        spread: 70,
+        origin: { y: 0.6 },
+        colors: ['#FF8A3D', '#FFB380', '#FFFFFF']
+      });
+
     } catch (err: any) {
       setError(err.message || 'Failed to join early access. Please try again.');
     } finally {
