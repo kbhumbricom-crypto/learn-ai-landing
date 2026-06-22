@@ -351,9 +351,9 @@ export default function MarketingSections({ onCtaClick }: { onCtaClick?: () => v
               </div>
               
               {/* Content Area */}
-              <div style={{ padding: '4rem 4rem 5rem 4rem', minHeight: '260px', position: 'relative', backgroundColor: 'rgba(0,0,0,0.3)' }}>
+              <div style={{ padding: 'clamp(2rem, 5vw, 4rem)', minHeight: '260px', position: 'relative', backgroundColor: 'rgba(0,0,0,0.3)' }}>
                 {/* Visual decoration: Quote Mark */}
-                <div style={{ position: 'absolute', top: '2rem', left: '2rem', opacity: 0.1, color: 'var(--color-accent)' }}>
+                <div style={{ position: 'absolute', top: 'clamp(1rem, 3vw, 2rem)', left: 'clamp(1rem, 3vw, 2rem)', opacity: 0.1, color: 'var(--color-accent)' }}>
                   <svg width="60" height="60" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                     <path d="M14.017 21L16.411 14.5C16.892 13.06 17.5 11.5 18 10C18.172 9.474 18.259 8.949 18.259 8.423C18.259 6.533 16.726 5 14.836 5C12.946 5 11.413 6.533 11.413 8.423C11.413 8.653 11.451 8.878 11.523 9.094C11.979 10.457 12.639 11.758 13.486 12.955L14.017 21ZM5.017 21L7.411 14.5C7.892 13.06 8.5 11.5 9 10C9.172 9.474 9.259 8.949 9.259 8.423C9.259 6.533 7.726 5 5.836 5C3.946 5 2.413 6.533 2.413 8.423C2.413 8.653 2.451 8.878 2.523 9.094C2.979 10.457 3.639 11.758 4.486 12.955L5.017 21Z" />
                   </svg>
@@ -364,25 +364,25 @@ export default function MarketingSections({ onCtaClick }: { onCtaClick?: () => v
                   initial={{ opacity: 0, x: 20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.4 }}
-                  style={{ position: 'relative', zIndex: 1, paddingLeft: '1.5rem' }}
+                  style={{ position: 'relative', zIndex: 1, paddingLeft: 'clamp(0.5rem, 3vw, 1.5rem)' }}
                 >
                   {activeTab === 'storyteller' && (
-                    <p style={{ fontSize: '1.45rem', lineHeight: 1.8, fontFamily: 'var(--font-display)', color: 'var(--color-text-muted)', margin: 0 }}>
+                    <p style={{ fontSize: 'clamp(1rem, 4vw, 1.45rem)', lineHeight: 1.8, fontFamily: 'var(--font-display)', color: 'var(--color-text-muted)', margin: 0 }}>
                       "Imagine you plant a single apple seed. It grows into a tree, which gives you 100 apples. You plant those. Now you have 100 trees. Each of those gives you 100 apples. That's compound interest. Your money isn't just growing, it's growing the thing that grows it. The longer you leave it alone, the more absurd the numbers get."
                     </p>
                   )}
                   {activeTab === 'coach' && (
-                    <p style={{ fontSize: '1.45rem', lineHeight: 1.8, fontFamily: 'var(--font-display)', color: 'var(--color-text-muted)', margin: 0 }}>
+                    <p style={{ fontSize: 'clamp(1rem, 4vw, 1.45rem)', lineHeight: 1.8, fontFamily: 'var(--font-display)', color: 'var(--color-text-muted)', margin: 0 }}>
                       "Most people lose at wealth because they interrupt the math. Compound interest is the only force that rewards extreme patience with extreme exponential returns. If you touch the money, you kill the compounding. Your only job is to put the money in the machine and refuse to look at it for twenty years. Got it?"
                     </p>
                   )}
                   {activeTab === 'friend' && (
-                    <p style={{ fontSize: '1.45rem', lineHeight: 1.8, fontFamily: 'var(--font-display)', color: 'var(--color-text-muted)', margin: 0 }}>
+                    <p style={{ fontSize: 'clamp(1rem, 4vw, 1.45rem)', lineHeight: 1.8, fontFamily: 'var(--font-display)', color: 'var(--color-text-muted)', margin: 0 }}>
                       "Okay, so compound interest sounds complicated, but it's basically just money making babies, and then those babies making babies. So instead of just getting $5 every year, your $5 starts earning its own money. It's super slow at first, which is why people quit, but suddenly ten years later it literally explodes."
                     </p>
                   )}
                   {activeTab === 'analyst' && (
-                    <p style={{ fontSize: '1.45rem', lineHeight: 1.8, fontFamily: 'var(--font-display)', color: 'var(--color-text-muted)', margin: 0 }}>
+                    <p style={{ fontSize: 'clamp(1rem, 4vw, 1.45rem)', lineHeight: 1.8, fontFamily: 'var(--font-display)', color: 'var(--color-text-muted)', margin: 0 }}>
                       "Compound interest operates on the formula A = P(1 + r/n)^(nt). Unlike simple interest, which only calculates returns on the principal, compound interest calculates returns on the accumulated total. This creates an exponential growth curve that accelerates significantly over longer time horizons."
                     </p>
                   )}
@@ -427,7 +427,7 @@ export default function MarketingSections({ onCtaClick }: { onCtaClick?: () => v
               backgroundColor: 'rgba(255, 255, 255, 0.02)', 
               border: '1px solid rgba(255, 255, 255, 0.08)', 
               borderRadius: '1.5rem', 
-              padding: '4rem', 
+              padding: 'clamp(2rem, 5vw, 4rem)', 
               textAlign: 'left', 
               maxWidth: '56rem', 
               margin: '0 auto',
@@ -435,15 +435,15 @@ export default function MarketingSections({ onCtaClick }: { onCtaClick?: () => v
             }}
             variants={cardVariant}
           >
-            <p style={{ fontSize: '1.25rem', lineHeight: 1.8, color: 'rgba(255,255,255,0.9)', marginBottom: '1.5rem', fontStyle: 'italic', borderLeft: '4px solid var(--color-accent)', paddingLeft: '1.5rem' }}>
+            <p style={{ fontSize: 'clamp(1.05rem, 3.5vw, 1.25rem)', lineHeight: 1.8, color: 'rgba(255,255,255,0.9)', marginBottom: '1.5rem', fontStyle: 'italic', borderLeft: '4px solid var(--color-accent)', paddingLeft: 'clamp(1rem, 3vw, 1.5rem)' }}>
               "A common question we get: How do I know the information is actually legit?"
             </p>
             
-            <p style={{ fontSize: '1.15rem', lineHeight: 1.8, color: 'var(--color-text-muted)', marginBottom: '1.5rem' }}>
+            <p style={{ fontSize: 'clamp(0.95rem, 3vw, 1.15rem)', lineHeight: 1.8, color: 'var(--color-text-muted)', marginBottom: '1.5rem' }}>
               Learn.ai doesn't invent curriculum—it decodes it. By isolating the core principles of your source material, it preserves 100% of the academic rigor while completely reinventing the delivery.
             </p>
             
-            <p style={{ fontSize: '1.15rem', lineHeight: 1.8, color: 'var(--color-text-muted)' }}>
+            <p style={{ fontSize: 'clamp(0.95rem, 3vw, 1.15rem)', lineHeight: 1.8, color: 'var(--color-text-muted)' }}>
               It anchors itself to the established ground truth of the subject, ensuring no hallucinations or filler. You get the exact same concepts taught at top universities, just translated into a language your brain can actually absorb.
             </p>
           </motion.div>
@@ -522,7 +522,7 @@ export default function MarketingSections({ onCtaClick }: { onCtaClick?: () => v
             <span className="title-accent">great teacher.</span>
           </h2>
           
-          <div style={{ fontSize: '1.15rem', lineHeight: 1.8, color: 'var(--color-text-muted)', display: 'flex', flexDirection: 'column', gap: '1.5rem', textAlign: 'center' }}>
+          <div style={{ fontSize: 'clamp(0.95rem, 3vw, 1.15rem)', lineHeight: 1.8, color: 'var(--color-text-muted)', display: 'flex', flexDirection: 'column', gap: '1.5rem', textAlign: 'center' }}>
             <p>
               Think about the best teacher you ever had. The one who made a subject click that you'd written off as "not for you." The one whose explanations felt like they were written specifically for your brain.
             </p>
