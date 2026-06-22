@@ -74,37 +74,20 @@ export default function EarlyAccess() {
   }, []);
 
   const handleCtaClick = () => {
-    // Custom fast smooth scroll
-    const duration = 500; // milliseconds
-    const startY = window.scrollY;
-    const startTime = performance.now();
-
-    const easeOutQuart = (t: number) => 1 - Math.pow(1 - t, 4);
-
-    const animateScroll = (currentTime: number) => {
-      const elapsed = currentTime - startTime;
-      const progress = Math.min(elapsed / duration, 1);
-      
-      window.scrollTo(0, startY * (1 - easeOutQuart(progress)));
-
-      if (progress < 1) {
-        requestAnimationFrame(animateScroll);
-      }
-    };
-    requestAnimationFrame(animateScroll);
-
     if (cardRef.current) {
-      const observer = new IntersectionObserver((entries) => {
-        if (entries[0].isIntersecting) {
-          cardRef.current?.classList.add('shimmer-effect');
-          setTimeout(() => {
-            cardRef.current?.classList.remove('shimmer-effect');
-          }, 1500);
-          observer.disconnect();
-        }
-      }, { threshold: 0.5 }); // Trigger when 50% of the card is visible
+      // Calculate offset to leave a bit of breathing room at the top
+      const yOffset = -20;
+      const y = cardRef.current.getBoundingClientRect().top + window.scrollY + yOffset;
       
-      observer.observe(cardRef.current);
+      window.scrollTo({
+        top: y,
+        behavior: 'smooth'
+      });
+
+      cardRef.current.classList.add('shimmer-effect');
+      setTimeout(() => {
+        cardRef.current?.classList.remove('shimmer-effect');
+      }, 1500);
     }
   };
 
