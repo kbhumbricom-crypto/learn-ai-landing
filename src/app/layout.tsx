@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://learn-ai-landing.vercel.app'),
-  title: "Learn.ai",
+  title: "LearnAI",
   description: "Learn any course, in your instructor's voice.",
 };
 

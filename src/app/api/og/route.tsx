@@ -71,7 +71,7 @@ export async function GET(request: NextRequest) {
           alignItems: 'center',
           gap: '8px',
         }}>
-          ✨ Learn.ai
+          ✨ LearnAI
         </div>
       </div>
     ),

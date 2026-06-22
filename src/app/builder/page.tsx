@@ -185,7 +185,7 @@ export default function Home() {
         {/* Navbar */}
         <nav style={{ padding: '1.5rem 2rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', maxWidth: '75rem', margin: '0 auto', width: '100%' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontWeight: 700, fontSize: '1.45rem', color: 'var(--color-text)' }}>
-          <Logo size={28} /> Learn.ai
+          <Logo size={28} /> LearnAI
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
           
@@ -233,7 +233,7 @@ export default function Home() {
               Master any subject, through the mind you&nbsp;<span className="font-serif italic font-normal bg-gradient-to-br from-[#FFD4B0] via-orange-soft to-orange bg-clip-text text-transparent tracking-tight">choose.</span>
             </h1>
             <p style={{ fontSize: 'clamp(1rem, 1.5vw, 1.25rem)', color: 'var(--color-text-muted)', lineHeight: 1.6, maxWidth: '90%' }}>
-              Point Learn.ai at any course syllabus and an instructor's profile. We analyze the curriculum, decode their unique teaching style, and instantly generate a self-paced course written exactly how they'd teach it.
+              Point LearnAI at any course syllabus and an instructor's profile. We analyze the curriculum, decode their unique teaching style, and instantly generate a self-paced course written exactly how they'd teach it.
             </p>
           </div>
 

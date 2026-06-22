@@ -235,9 +235,9 @@ export default function EarlyAccess() {
           }
         `}</style>
           {/* Navbar */}
-          <nav style={{ padding: '1.5rem 2rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', maxWidth: '75rem', margin: '0 auto', width: '100%' }}>
+          <nav style={{ padding: '1.2rem 2rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', maxWidth: '75rem', margin: '0 auto', width: '100%' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontWeight: 700, fontSize: '1.45rem', color: 'var(--color-text)' }}>
-              <Logo size={28} /> Learn.ai
+              <Logo size={28} /> LearnAI
             </div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
               <div className="hidden sm:flex" style={{ alignItems: 'center', gap: '0.75rem' }}>
@@ -258,7 +258,7 @@ export default function EarlyAccess() {
           </nav>
 
           {/* Main Content Container */}
-          <main style={{ maxWidth: '75rem', margin: 'auto', padding: 'clamp(1.5rem, 5vw, 2rem)', display: 'grid', gridTemplateColumns: '1.2fr 25rem', gap: '3rem', alignItems: 'center', width: '100%', flexGrow: 1 }}>
+          <main style={{ maxWidth: '75rem', margin: 'auto', padding: 'clamp(1.2rem, 5vw, 2rem)', display: 'grid', gridTemplateColumns: '1.2fr 25rem', gap: '3rem', alignItems: 'center', width: '100%', flexGrow: 1 }}>
             
             {/* Left Column */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '3rem', position: 'relative' }}>
@@ -284,7 +284,7 @@ export default function EarlyAccess() {
                   Master any subject, through the mind you&nbsp;<span className="font-serif italic font-normal bg-gradient-to-br from-[#FFD4B0] via-orange-soft to-orange bg-clip-text text-transparent tracking-tight">choose.</span>
                 </h1>
                 <p style={{ fontSize: 'clamp(1rem, 1.5vw, 1.25rem)', color: 'var(--color-text-muted)', lineHeight: 1.6, maxWidth: '90%' }}>
-                  Learn.ai turns any syllabus into a deeply personalized course taught in the style of your favorite expert. Join our early access to be the first to experience the future of learning.
+                  LearnAI turns any syllabus into a deeply personalized course taught in the style of your favorite expert. Join our early access to be the first to experience the future of learning.
                 </p>
               </div>
 
@@ -359,7 +359,7 @@ export default function EarlyAccess() {
                       </div>
                       <h2 style={{ fontSize: '1.5rem', fontWeight: 700, color: 'var(--color-text)', marginBottom: '0.75rem' }}>You're on the list!</h2>
                       <p style={{ color: 'var(--color-text-muted)', fontSize: '1rem', lineHeight: 1.5 }}>
-                        Thank you for your interest in Learn.ai. We'll notify you as soon as early access opens up.
+                        Thank you for your interest in LearnAI. We'll notify you as soon as early access opens up.
                       </p>
                     </motion.div>
                   ) : (
@@ -371,7 +371,7 @@ export default function EarlyAccess() {
                     >
                       <div style={{ marginBottom: '1.5rem' }}>
                         <h2 style={{ fontSize: '1.5rem', fontWeight: 700, color: 'var(--color-text)', marginBottom: '0.5rem', letterSpacing: '-0.01em' }}>Get Early Access</h2>
-                        <p style={{ color: 'var(--color-text-muted)', fontSize: '0.95rem' }}>Join the waitlist to be among the first to experience Learn.ai.</p>
+                        <p style={{ color: 'var(--color-text-muted)', fontSize: '0.95rem' }}>Join the waitlist to be among the first to experience LearnAI.</p>
                       </div>
 
                       {error && (
@@ -502,7 +502,7 @@ export default function EarlyAccess() {
               display: 'flex',
               justifyContent: 'center',
               zIndex: 100,
-              padding: '0 1.5rem',
+              padding: '0 1.2rem',
               pointerEvents: 'none', // Allow clicking through the container
             }}
           >

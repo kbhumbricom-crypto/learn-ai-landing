@@ -21,13 +21,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return { title: 'Course Not Found' };
   }
 
-  const description = course.tagline || `Learn ${course.title} on Learn.ai`;
+  const description = course.tagline || `Learn ${course.title} on LearnAI`;
 
   return {
-    title: `${course.title} | Learn.ai`,
+    title: `${course.title} | LearnAI`,
     description,
     openGraph: {
-      title: `${course.title} | Learn.ai`,
+      title: `${course.title} | LearnAI`,
       description,
       type: 'website',
       images: [

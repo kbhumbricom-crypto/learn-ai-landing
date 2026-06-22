@@ -5,7 +5,7 @@ export function Logo({ size = 24, className = "" }: { size?: number, className?:
   return (
     <Image 
       src="/logo.png" 
-      alt="Learn.ai Logo" 
+      alt="LearnAI Logo" 
       width={size} 
       height={size} 
       className={className}

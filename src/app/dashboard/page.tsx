@@ -5,7 +5,7 @@ import { Logo } from '@/components/Logo';
 import DashboardClient from './DashboardClient';
 
 export const metadata = {
-  title: 'My Courses | Learn.ai',
+  title: 'My Courses | LearnAI',
 };
 
 export const dynamic = 'force-dynamic';
@@ -37,7 +37,7 @@ export default async function DashboardPage() {
       <aside style={{ width: '280px', flexShrink: 0, borderRight: '1px solid rgba(255,255,255,0.08)', backgroundColor: 'rgba(5,5,5,0.6)', backdropFilter: 'blur(20px)', position: 'relative', zIndex: 10, display: 'flex', flexDirection: 'column' }}>
         <div style={{ padding: '2rem 1.5rem' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', fontWeight: 800, fontSize: '1.5rem', color: '#f5efe6', padding: '1rem', letterSpacing: '-0.02em', marginBottom: '2rem' }}>
-            <Logo size={30} /> Learn.ai
+            <Logo size={30} /> LearnAI
           </div>
 
           <nav style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
