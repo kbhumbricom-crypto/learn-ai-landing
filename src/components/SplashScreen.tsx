@@ -72,28 +72,26 @@ export default function SplashScreen({ onComplete }: { onComplete: () => void })
           }}
         />
 
-        {/* Tracking Number (pushed AHEAD of the laser) */}
-        <motion.div
-          style={{
-            position: 'absolute',
-            top: '50%',
-            left: widthStr,
-            marginTop: '-10px', // Vertically center text
-          }}
-        >
+        {/* Centered Number below the bar */}
+        <div style={{
+          position: 'absolute',
+          top: '100%',
+          left: 0,
+          right: 0,
+          textAlign: 'center',
+          marginTop: '1.5rem',
+        }}>
           <div style={{
-            transform: 'translateX(16px)', // Pushed exactly 16px ahead of the laser tip
             color: '#fff',
             fontSize: '0.85rem',
             fontWeight: 400,
             letterSpacing: '0.1em',
-            opacity: 0.7,
+            opacity: 0.6,
             fontVariantNumeric: 'tabular-nums',
-            textShadow: '0 2px 10px rgba(0,0,0,0.5)',
           }}>
             <motion.span>{rounded}</motion.span>%
           </div>
-        </motion.div>
+        </div>
 
         {/* Ambient Lens Flare */}
         <motion.div
